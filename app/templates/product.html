@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block content %}
+
+<div id="center_block">
+    <h3>Продукты от Туевой из SQLight!! Для студентов - бесплатно!!</h3>
+
+    <table border="2">
+     <tr>
+        <th>Артикул</th>
+        <th>Фото</th>
+        <th>Продукт магазина РОГА и КОПЫТА</th>
+        <th>Цена(руб.)</th>
+        <th>Заказ с доставкой на дом</th>
+    </tr>
+    {% for item in products %}
+         <tr>
+         <td>{{ item.id }}</td>
+         <td><img src="../../static/images/{{ item.foto}}" width="100" height="100"></td>
+         <td>{{ item.name }}</td>
+         <td>{{ item.price }}</td>
+         <td>Заказать </td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endblock %}
